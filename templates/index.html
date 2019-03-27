@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detect Bodies from Images</title>
+</head>
+<body>
+    <div class="centered">
+        <form action=" {{ url_for('result') }}" method="Post">
+            <h1>Detect Bodies from Images</h1>
+            <hr>
+            <h3>Enter URL:</h3> <input name="URL of the Image" type="url" id="URL">
+            <input type="button" id="btn" value="Go"><br>
+            <H3> Preview Image: </H3>
+            <script type="text/javascript">
+                document.getElementById('btn').onclick = function() {
+                var myImage = new Image(700, 400);
+                myImage.Id = 'myImg'
+                myImage.src = document.getElementById('URL').value;
+                document.body.appendChild(myImage);
+                }
+            </script>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

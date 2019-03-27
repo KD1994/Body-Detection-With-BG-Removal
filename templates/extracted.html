@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Extracted Bodies after BG Removal</title>
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+    .row {
+        display: flex;
+    }
+    .column {
+        flex: 50%;
+        padding: 10px;
+    }
+    .verticalLine {
+        width: 1px;
+        background-color: black;
+    }
+</style>
+</head>
+<body>
+    <form>
+        {% for each_item in objects %}
+        <div class="row">
+            <div class="column" style="background-color:#bbb;">
+                <h2>With Background</h2>
+                <img src= "{{ each_item }}" >
+            </div>
+            <div class="verticalLine"></div>
+            <div class="column" style="background-color:#bbb;">
+                <h2>Without Background</h2>
+                <img src= "{{ bg_rem_objs_path[loop.index0] }}" >
+            </div>
+        </div>
+        {% endfor %}
+    </form>
+</body>
+</html>
