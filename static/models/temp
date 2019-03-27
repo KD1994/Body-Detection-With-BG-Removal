@@ -1,0 +1,7 @@
+Add necessary Models to this folder to run the script.
+
+Models used in this:
+
+1. YoloV3   - Human Body Recognition
+2. Xception - Background removal 
+
