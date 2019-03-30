@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <style>
+        body {
+          font-family: Arial;
+          color: black;
+        }
+
+        .split {
+          height: 100%;
+          width: 50%;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          overflow-x: hidden;
+          padding-top: 20px;
+        }
+
+        .left {
+          left: 0;
+          background-color: white;
+        }
+
+        .right {
+          right: 0;
+          background-color: white;
+        }
+
+        .centered {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+        }
+    </style>
+</head>
+<body>
+<form action=" {{ url_for('extracted') }}" method="post">
+    <div class="split left">
+        <div class="centered">
+            <h3>Image Preview:</h3>
+            <img src="{{ user_image }}" width="700" height="400" alt="Returned Image" id="img1  ">
+        </div>
+    </div>
+    <div class="split right">
+        <div class="centered">
+            <h3>Object Details:</h3>
+            <table border="1" id="t1">
+                <tr>
+                    <th>Object's name</th>
+                    <th>Percent Probability</th>
+                    <th>Box points</th>
+                    <th>Extracted Body</th>
+                </tr>
+                {% for dict_item in detections %}
+                <tr>
+                    <td>{{ dict_item['name'] }}</td>
+                    <td>{{ dict_item['percentage_probability'] }}</td>
+                    <td>{{ dict_item['box_points'] }}</td>
+                    <td><img src= "{{ objects[loop.index0] }}" width="50" height="50" alt="person"></td>
+                </tr>
+                {% endfor %}
+            </table>
+            <button type="submit">Proceed for BG Removal</button>
+        </div>
+    </div>
+</form>
+</body>
+</html>
