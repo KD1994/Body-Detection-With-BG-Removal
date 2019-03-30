@@ -18,6 +18,7 @@ To download yolov3/Retinanet/yolo-tiny: https://github.com/OlafenwaMoses/ImageAI
 2: Xception Model: used to remove the background of the image
 
 use this command to download Xception model:
+
 wget http://download.tensorflow.org/models/deeplabv3_pascal_train_aug_2018_01_04.tar.gz
 
 Make sure to add these models into "static/models/(your_model_folder)" folder to run the main script.
