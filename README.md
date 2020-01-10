@@ -26,7 +26,7 @@ All the prerequisites are mentioned above please install it before installing im
 
 use this command for installation of imageai:
 ```
-pip3 install https://github.com/OlafenwaMoses/ImageAI/releases/download/2.0.2/imageai-2.0.2-py3-none-any.whl
+pip3 install imageai --upgrade
 ```
 
 I have used YoloV3 for object detection, you can use Retinanet or yolo-tiny which are also trained for it.
@@ -41,3 +41,13 @@ wget http://download.tensorflow.org/models/deeplabv3_pascal_train_aug_2018_01_04
 ```
 
 Make sure to add these models into "static/models/(your_model_folder)" folder to run the main script.
+
+## Output Example
+
+Body Detection  | Image with BG   | Image w/o BG
+--------------  | -------------   | ------------
+![image](static/op_images/1.jpg)  |![image](static/op_images/1.jpg-objects/person-1.jpg)  | ![image](static/op_images/1.jpg-objects/bg_removed_person-1.jpg)
+![image](static/op_images/1.jpg)  |![image](static/op_images/1.jpg-objects/person-2.jpg)  | ![image](static/op_images/1.jpg-objects/bg_removed_person-2.jpg)
+![image](static/op_images/1.jpg)  |![image](static/op_images/1.jpg-objects/person-3.jpg)  | ![image](static/op_images/1.jpg-objects/bg_removed_person-3.jpg)
+![image](static/op_images/1.jpg)  |![image](static/op_images/1.jpg-objects/person-4.jpg)  | ![image](static/op_images/1.jpg-objects/bg_removed_person-4.jpg)
+![image](static/op_images/1.jpg)  |![image](static/op_images/1.jpg-objects/person-5.jpg)  | ![image](static/op_images/1.jpg-objects/bg_removed_person-5.jpg)
